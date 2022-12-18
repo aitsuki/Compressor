@@ -10,12 +10,12 @@ import java.io.File
 import java.lang.Integer.max
 
 object Compressor {
-    
+
     fun compress(
         context: Context,
         file: File,
-        maxResolution: Int = 1200,
-        quality: Int = 80
+        maxResolution: Int = 1080,
+        quality: Int = 70
     ): Result<File> {
         try {
             check(maxResolution > 0) { "maxResolution must greater than 0" }

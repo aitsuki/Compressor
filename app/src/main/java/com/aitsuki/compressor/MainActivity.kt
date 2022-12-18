@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.resolutionSlider.value = 1200f
-        binding.qualitySlider.value = 80f
+        binding.resolutionSlider.value = 1080f
+        binding.qualitySlider.value = 70f
 
         lifecycleScope.launch {
             paramsFlow().debounce(300)
