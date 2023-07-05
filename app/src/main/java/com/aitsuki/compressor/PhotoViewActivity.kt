@@ -11,9 +11,10 @@ import com.aitsuki.compressor.databinding.ActivityPhotoViewBinding
 class PhotoViewActivity : AppCompatActivity() {
 
     companion object {
-        fun newIntent(context: Context, imageUri: Uri): Intent {
-            return Intent(context, PhotoViewActivity::class.java)
-                .putExtra("imageUri", imageUri)
+        @JvmStatic
+        fun start(context: Context, data: Uri) {
+            val starter = Intent(context, PhotoViewActivity::class.java).setData(data)
+            context.startActivity(starter)
         }
     }
 
@@ -24,9 +25,7 @@ class PhotoViewActivity : AppCompatActivity() {
         binding = ActivityPhotoViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val uri = intent.getParcelableExtra<Uri>("imageUri")
-        binding.photoView.setImageURI(uri)
+        binding.photoView.setImageURI(intent.data)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

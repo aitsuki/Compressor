@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             append("Orientation: ${info.orientation}")
         }
         iv.setOnClickListener {
-            startActivity(PhotoViewActivity.newIntent(this, info.uri))
+            PhotoViewActivity.start(this, info.uri)
         }
     }
 
